@@ -1,0 +1,97 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+
+\title{Vector Space Vocabulary}
+\author{\phantom{Dr. Findell}}
+\date{Due: TBA}
+
+\begin{document}
+\begin{abstract}
+Vocabulary and key theorems about vector spaces.   
+\end{abstract}
+\maketitle
+
+
+%polynomials of (up to) degree n.
+%row space
+%intersection and union of sets? 
+
+\begin{question}
+Suppose $L: V\to W$, is a linear transformation, where $V$ and $W$ are vector spaces.  
+
+The set of input values, $\answer{V}$, is called the $\answer[format=string]{domain}$ of the transformation.  The output values are \emph{elements} of $\answer{W}$, which is called the \emph{codomain} or \emph{`target space'} of the transformation.  But because some elements of $W$ 
+might not get `hit' by the transformation, we call the set of all output values the $\answer[format=string]{range}$ of the transformation.  
+\end{question}
+
+\begin{question}
+Which of the following are axioms of a vector space, $V$?  (Select all) 
+Suppose $u,v,w\in V$ and $r,s\in\R$.
+\begin{selectAll}
+\choice[correct]{Addition is commutative:  $v+w=w+v$}
+\choice[correct]{Addition is associative: $(u+v)+w = u+(v+w)$}
+\choice[correct]{Additive identity $0$ exists: $v+0=v$}
+\choice[correct]{Additive inverse $-v$ exists: $v+(-v) = 0$}
+\choice[correct]{Scalar Mult. is associative:  $(rs)v = r(sv)$}
+\choice[correct]{Scalar Mult. identity exists: $1v=v$}
+\choice[correct]{Distributive law for scalars: $(r+s)v = rv+sv$}
+\choice[correct]{Distributive law for vectors: $r(v+w) = rv+rw$}
+\end{selectAll}
+\end{question}
+
+\begin{question}
+Suppose $V$ is a vector space, $W$ is a nonempty subset of $V$, $u,v\in V$, and $r\in\R$.  
+
+We say $W$ is closed under vector addition if $\answer{u+v}\in \answer{W}$. 
+
+We say $W$ is closed under scalar multiplication if $\answer{ru}\in \answer{W}$.  % and $rv$
+
+We say these properties are about $\answer[format=string]{closure}$ of $W$, and then 
+we may conclude $W$ is a $\answer[format=string]{subspace}$ of $V$.  
+\end{question}
+
+\begin{question}
+Given a matrix $A$, the $\answer[format=string]{null space}$ (two words) of $A$ is the set of 
+solutions to the equation $Ax = 0$.  
+\end{question}
+
+
+\begin{question}
+Suppose $V$ is a vector space, $u,v\in V$, and $r,s\in\R$.
+
+The expression $ru+sv$ is called a $\answer[format=string]{linear combination}$ (two words) of $u$ and $v$, and it must be an element of $\answer{V}$.  
+\end{question}
+
+\begin{question}
+Given a set of vectors $\{v_1, \dots, v_k\}$, the set of all linear combinations of those vectors is called the $\answer[format=string]{span}$ of those vectors.  
+\end{question}
+
+\begin{question}
+Given a matrix $M$, the span of its column vectors is called the $\answer[format=string]{column space}$ (two words) of the matrix. 
+\end{question}
+
+\begin{question}
+Given a matrix $M$, the number of non-zero rows in $\texttt{rref}(M)$ is called the $\answer[format=string]{rank}$ of $M$.  
+\end{question}
+
+\begin{question}
+Given a set of vectors $\{v_1, \dots, v_k\}$, if one of them can be written as a linear combination of the other $k-1$ vectors, the set is said to be $\answer[format=string]{linearly dependent}$ (two words)
+
+If \emph{none} of them can be written as a linear combination of the other $k-1$ vectors, the set is said to be $\answer[format=string]{linearly independent}$ (two words).  
+\end{question}
+
+\begin{question}
+If a set of vectors $\{v_1, \dots, v_k\}$ is a minimal spanning set of a vector space $V$, it is called a $\answer[format=string]{basis}$ of $V$, and $k$ is called the $\answer[format=string]{dimension}$ of $V$.  
+\end{question}
+
+\begin{question}
+Given a matrix $A$, the dimension of the null space of $A$ is called the $\answer[format=string]{nullity}$ of $A$.  
+\end{question}
+
+\begin{question}
+Theorem:  If $A$ is an $m\times n$ matrix, $\rank(A) + \textrm{nullity}(A) = \answer{n}$.  
+\end{question}
+
+
+\end{document}

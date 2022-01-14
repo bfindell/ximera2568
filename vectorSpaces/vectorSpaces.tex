@@ -1,0 +1,161 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+
+\title{Vector Spaces}
+\author{\phantom{Dr. Golubitsky}}
+\date{Due: TBA}
+
+%\makeatletter
+%\newlabel{c5.1.4a}{{4}{130}}
+%\newlabel{c5.1.4f}{{10}{130}}
+%\newlabel{c5.1.5a}{{11}{130}}
+%\newlabel{c5.1.5e}{{15}{130}}
+%\makeatother
+\begin{document}
+\begin{abstract}
+Vector spaces.   
+\end{abstract}
+\maketitle
+
+
+
+% Online
+
+\emph{Insert polynomial examples: $p(0) = k$.  $p'(x)$ = something}
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c5.1.4a} -- \ref{c5.1.4f} you are given a
+vector space $V$ and a subset $W$.  For each pair, decide whether or
+not $W$ is a subspace of $V$, and explain why.
+
+
+\exerciselabel{4}{5.1}\begin{exercise} \label{c5.1.4a}
+$V=\R^3$ and $W$ consists of vectors in $\R^3$
+     that have a $0$ in their first component.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{5}{5.1}\begin{exercise} \label{c5.1.4b}
+$V=\R^3$ and $W$ consists of vectors in $\R^3$
+     that have a $1$ in their first component.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1 = (1,4,2)$ and $w_2 = (1,-1,3)$
+be elements of $W$.  Then,
+\[
+w_1 + w_2 = (1,4,2) + (1,-1,3) = (2,3,5)
+\]
+which is not an element of $W$.
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{7}{5.1}\begin{exercise} \label{c5.1.4c}
+$V=\R^2$ and $W$ consists of vectors in $\R^2$
+     for which the sum of the components is $0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{6}{5.1}\begin{exercise} \label{c5.1.4d}
+$V=\R^2$ and $W$ consists of vectors in $\R^2$
+     for which the sum of the components is $1$.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1 = (3,-2)$ and $w_2 = (0,1)$ be
+elements of $W$.  Then,
+\[
+w_1 + w_2 = (3,-2) + (0,1) = (3,-3).
+\]
+The sum of the elements $3 - 3 = 0 \neq 1$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c5.1.5a} -- \ref{c5.1.5e} which of the
+sets $S$ are subspaces?
+
+
+\exerciselabel{14}{5.1}\begin{exercise} \label{c5.1.5d}
+$S = \{x\in\R^2: Ax=0\}$ where $A$ is a $3\times 2$ matrix.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{15}{5.1}\begin{exercise} \label{c5.1.5e}
+$S = \{x\in\R^2: Ax=b\}$ where $A$ is a $3\times 2$ matrix
+	and $b\in\R^3$ is a fixed nonzero vector.
+
+\begin{solution}
+\ans The set $S$ is not a subspace.
+
+\soln The set $S$ is closed under neither addition nor scalar
+multiplication.  For example, let $x_1$ and $x_2$ be solutions to the
+equation $Ax = b$.  Then,
+\[
+A(x_1 + x_2) = Ax_1 + Ax_2 = b + b = 2b,
+\]
+so $(x_1 + x_2)$ is not an element of $S$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

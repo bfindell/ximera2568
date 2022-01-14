@@ -1,0 +1,131 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+
+\title{Linear Dependence and Independence}
+\author{\phantom{Dr. Golubitsky}}
+\date{Due: TBA}
+
+
+\begin{document}
+\begin{abstract}
+Linear Dependence and Independence.  
+\end{abstract}
+\maketitle
+
+
+
+\problemlabel
+
+
+
+\exerciselabel{2}{5.4}\begin{exercise} \label{c5.4.2}
+For which values of $b$ are the vectors $(1,b)$ and $(3,-1)$
+linearly independent?
+
+\begin{solution}
+
+\ans The set is linearly independent if $b \neq -\frac{1}{3}$.
+
+\soln Note that a set of two vectors is linearly dependent if one is
+a multiple of the other.  So this set is dependent for any values of
+$b$ at which
+\[
+(3,-1) = \alpha(1,b).
+\]
+When equality holds $\alpha = 3$.  Therefore, $b = -\frac{1}{3}$.  
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{3}{5.4}\begin{exercise} \label{c5.4.3}
+Let
+\[
+u_1=(1,-1,1) \quad u_2=(2,1,-2) \quad u_3 = (10,2,-6).
+\]
+Is the set $\{u_1,u_2,u_3\}$ linearly dependent or linearly independent?
+
+\begin{solution}
+
+\ans The set is linearly dependent.
+
+\soln Let $A$ be the matrix whose columns are $u_1$, $u_2$, and $u_3$. 
+The set $\{u_1,u_2,u_3\}$ is linearly dependent if there exists
+a nonzero vector $r = (r_1,r_2,r_3)$ such that $r_1u_1 + r_2u_2 +
+r_3u_3 = 0$, that is, if the homogeneous system $Ar = 0$ has a
+nonzero solution.  Row reduce:
+\[
+\matthree{1}{2}{10}{-1}{1}{2}{1}{-2}{-6} \longrightarrow
+\matthree{1}{0}{2}{0}{1}{4}{0}{0}{0}.
+\]
+So, $Ar = 0$ when $r = r_3(-2,-4,1)$.
+The value of $r$ is nonzero for $r_3 \neq 0$, so the set is indeed
+linearly dependent.
+As an example, let $r_3 = 1$.  Then,
+\[
+-4u_1 - 2u_2 + u_3 = -2(1,-1,1) - 4(2,1,-2) + (10,2,-6) =
+(0,0,0) = 0.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{5}{5.4}\begin{exercise}\label{C5.4.10}
+ Let 
+ \[
+ u = \Matrix{3\\2\\-5} \quad v = \Matrix{-6\\1\\7} \quad w = \Matrix{0\\5\\-3}
+ \]
+\begin{enumeratea}
+\item Determine whether the sets $\{u,v\}, \{u,w\}, \{v,w\}$ are linearly independent.
+\item Is the set $\{u,v,w\}$ linearly independent? 
+\end{enumeratea}
+
+  
+\begin{solution}
+
+\ans %THE SHORT ANSWER GOES HERE (if relevant)
+\begin{enumeratea}
+\item yes, yes, yes.
+\item no
+\end{enumeratea}
+
+\soln %A LONGER SOLUTION, EXPLAINING HOW THE ANSWER WAS FOUND, GOES HERE (if relevant)
+
+\begin{enumeratea}
+\item A set of two vectors is linearly dependent if and only if one is a scalar multiple of the other.  None of the vectors is a scalar multiple of another. Thus, $\{u,v\}, \{u,w\}, \{v,w\}$ are linearly independent.
+\item To tell whether $\{u,v,w\}$ is linearly independent, we solve the equation $au + bv + cw = 0$:
+\[ 
+a \Matrix{3 \\ 2 \\ -5} + b\Matrix{-6\\1\\7} + c\Matrix{0\\5\\-3} = \Matrix{0\\0\\0}
+\]
+We row reduce the coefficient matrix of this system: 
+\[ 
+\Matrix{ 3 & -6 & 0 \\ 2 & 1 & 5 \\ -5 & 7 & -3 } \to \Matrix{ 1 & -2 & 0 \\ 2 & 1 & 5 \\ -5 & 7 & -3 }  \to \Matrix{ 1 & -2 & 0 \\ 0 & 5 & 5 \\ 0 & -3 & -3 } \to\Matrix{ 1 & -2 & 0 \\ 0 & 1 & 1 \\ -5 & 1 & -1 } \] \[ \to \Matrix{ 1 & -2 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 0 } \to  \Matrix{ 1 & 0 & 2 \\ 0 & 1 & 1 \\ 0 & 0 & 0 } 
+\]
+Therefore, there are infinitely many solutions to this linearly system and $\{u,v,w\}$ is linearly dependent.
+
+\end{enumeratea}
+
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}

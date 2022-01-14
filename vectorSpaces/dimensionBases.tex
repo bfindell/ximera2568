@@ -1,0 +1,203 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+
+\title{Dimension and Bases}
+\author{\phantom{Dr. Golubitsky}}
+\date{Due: TBA}
+
+
+
+
+%\makeatletter
+%\newlabel{basis=span+indep}{{5.5.3}{142}}
+%\newlabel{L:computerank}{{5.5.4}{142}}
+%\newlabel{extendindep}{{5.6.4}{148}}
+%\makeatother
+
+\begin{document}
+\begin{abstract}
+Dimension and Bases
+\end{abstract}
+\maketitle
+
+
+
+\problemlabel
+
+
+
+\exerciselabel{1}{5.5}\begin{exercise} \label{c5.5.1}
+Show that ${\cal U}=\{u_1,u_2,u_3\}$ where
+\[
+u_1=(1,1,0) \quad u_2=(0,1,0) \quad u_3=(-1,0,1)
+\]
+is a basis for $\R^3$.
+
+\begin{solution}
+
+By Theorem~\ref{basis=span+indep},
+${\cal U}$ is a basis for $\R^3$ if the vectors of ${\cal U}$ are
+linearly independent and span $\R^3$.  By Lemma~\ref{L:computerank},
+the dimension of ${\cal U}$ is equal to the rank of the matrix whose
+rows are $u_1$, $u_2$, and $u_3$.  Row reduce this matrix:
+\[
+\matthree{1}{1}{0}{0}{1}{0}{-1}{0}{1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}.
+\]
+So $\dim({\cal U}) = 3 = \dim(\R^3)$, and we need now only show that
+$u_1$, $u_2$, and $u_3$ are linearly independent, which we can do by
+row reducing the matrix whose columns are the vectors of ${\cal U}$ as
+follows:
+\[
+\matthree{1}{0}{-1}{1}{1}{0}{0}{0}{1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}.
+\]
+Therefore, there is no nonzero solution to the equation
+${\cal U}r = 0$, so the vectors of ${\cal U}$ are linearly independent
+and ${\cal U}$ is a basis for $\R^3$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{3}{5.5}\begin{exercise} \label{c5.5.2}
+Let $S=\Span\{v_1,v_2,v_3\}$ where
+\[
+v_1=(1,0,-1,0) \quad v_2=(0,1,1,1) \quad v_3=(5,4,-1,4).
+\]
+Find the dimension of $S$ and find a basis for $S$.
+
+\begin{solution}
+
+\ans The dimension of $S$ is 2, and vectors $v_1$ and $v_2$ form a
+basis for $S$.
+
+\soln Row reduce the matrix $A$ whose rows are $v_1$, $v_2$, and $v_3$. 
+By Lemma~\ref{extendindep}, the number
+of nonzero rows in the reduced matrix is the dimension of $S$ and these
+rows form a basis for $S$.  So:
+\[
+\left(\begin{array}{rrrr} 1 & 0 & -1 & 0 \\ 0 & 1 & 1 & 1 \\ 5
+& 4 & -1 & 4 \end{array}\right) \longrightarrow \left(\begin{array}
+{rrrr} 1& 0 & -1 & 0 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0
+\end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{4}{5.5}\begin{exercise} \label{c5.5.3}
+Find a basis for the null space of
+\[
+A =\left(\begin{array}{rrrr} 1 & 0 & -1 & 2\\ 1 & -1 & 0 & 0\\
+4 & -5 & 1 & -2 \end{array} \right).
+\]
+What is the dimension of the null space of $A$?
+
+\begin{solution}
+
+\ans The vectors $(1,1,1,0)$ and $(-2,-2,0,1)$ form a basis for the
+nullspace of $A$; therefore the dimension of the nullspace is $2$.
+
+\soln Find the set of solutions to $Ax = 0$ by solving
+\[
+\left(\begin{array}{rrrr} 1 & 0 & -1 & 2 \\ 1 & -1 & 0 & 0 \\ 4
+& -5 & 1 & -2 \end{array}\right) \left(\begin{array}{r} x_1 \\ x_2
+\\ x_3 \\ x_4 \end{array}\right) = 0.
+\]
+To solve, row reduce $A$, obtaining
+\[
+\left(\begin{array}{rrrr} 1 & 0 & -1 & 2 \\ 0 & 1 & -1 & 2 \\ 0
+& 0 & 0 & 0 \end{array}\right).
+\]
+So the set of solutions to $Ax = 0$ can be written
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \\ x_4
+\end{array}\right) = \left(\begin{array}{c} x_3 - 2x_4 \\ x_3 - 2x_4
+\\ x_3 \\ x_4 \end{array}\right) = x_3\left(\begin{array}{r} 1 \\ 1
+\\ 1 \\ 0 \end{array}\right) + x_4\left(\begin{array}{r} -2 \\ -2
+\\ 0 \\ 1 \end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+% 5.5 Dimension and Bases 
+
+
+\exerciselabel{10}{5.5}\begin{exercise}\label{mc.exercise14}
+
+Determine whether each of the following statements is true or false and explain your answer.  
+\begin{enumerate}%[label=(\alph*)]
+\item If $A$ is an $m\times n$ matrix and the equation $AX=b$ is consistent for some $b$, then the columns of $A$ span $\mathbb{R}^m$.
+\item Let $A$ and $B$ be $n\times n$ matrices. If $AB = BA$ and if $A$ is invertible, then $A^{-1} B= B A^{-1}$. 
+\item If $A$ and $B$ are $m\times$n matrices, then both $AB^t$ and $A^t B$ are defined.
+\item Similar matrices always have the same eigenvectors.
+\item If $u,v,w$ are vectors such that $\{u,v\},$ $\{u,w\},$ and $\{v,w\}$ are linearly independent sets, then $\{u,v,w\}$ is a linearly independent set.
+\item Let $\{v_1,v_2,v_3\}$ be a basis for a vector space $V$. If $U$ is a subspace of $V,$ then some subset of $\{v_1,v_2,v_3\}$ is a basis for $U$.
+\end{enumerate}
+\begin{solution}
+
+\ans 
+We strike out those statements that are false and circle those that are true.
+\begin{enumerate}%[label=(\alph*)]
+\item {If $A$ is an $m\times n$ matrix and the equation $AX=b$ is consistent for some $b$, then the columns of $A$ span $\mathbb{R}^m$.}
+\item {Let $A$ and $B$ be $n\times n$ matrices. If $AB = BA$ and if $A$ is invertible, then $A^{-1} B= B A^{-1}$.}
+\item {If $A$ and $B$ are $m\times$n matrices, then both $AB^t$ and $A^t B$ are defined.}
+\item {Similar matrices always have the same eigenvectors.}
+\item {If $u,v,w$ are vectors such that $\{u,v\},$ $\{u,w\},$ and $\{v,w\}$ are linearly independent sets, then $\{u,v,w\}$ is a linearly independent set.}
+\item {Let $\{v_1,v_2,v_3\}$ be a basis for a vector space $V$. If $U$ is a subspace of $V,$ then some subset of $\{v_1,v_2,v_3\}$ is a basis for $U$.}
+\end{enumerate}
+
+\soln \begin{enumerate}%[label=(\alph*)]
+\item This is false. For example, let $A=\Matrix{1 & 0 \\ 0 & 0}$ and $b=\Matrix{1\\0}$. Then the system of equations $AX=b$ is consistent with solution $X=\Matrix{1\\0}$. 
+
+\item This is false. For example, let $A=\Matrix{1 & 1\\ 0 & 1}$ and $B=\Matrix{1 & 0\\ 0 & 2}$. Then $A^{-1}=\Matrix{1 & -1\\ 0 & 1}$ and 
+\[
+A^{-1}B = \Matrix{1 & -2\\ 0 & 2} \neq \Matrix{1 & -1\\ 0 & 2} = BA^{-1}.
+\]
+
+\item This is true.  The transpose of an $m\times n$ matrix is an $n\times m$ matrix. Therefore 
+\[
+AB^t \mbox{ is }  (m\times n)(n\times m) = m\times m
+\]
+and
+\[
+A^tB \mbox{ is }  (n\times m)(m\times n) = n\times n.
+\]
+
+\item This is false. Suppose $A$ and $B$ are similar matrices. Then, there exists an invertible matrix $P$ such that $A=P^{-1}BP$. Let $B=\Matrix{ 0 & 1 \\ 1 & 0}$ and $P=\Matrix{ 1 & 1 \\ 0 & 1}$. Then $P^{-1}=\Matrix{ 1 & -1 \\ 0 & 1}$ and $A=P^{-1}BP=\Matrix{ -1 & 0 \\ 1 & 1}$. $B$ has eigenvectors $(1,1)$ and $(1,-1)$. $A$ has eigenvectors $(0,1)$ and $(2,-1)$. These are not the same. 
+
+\item This is false. For example, let $V=\R^3$, $u=e_1$, $v=e_2$ and $w=e_1+e_2$. Then $\{u,v,w\}$ is a linearly dependent set, but $\{u,v\},$ $\{u,w\},$ and $\{v,w\}$ are all linearly independent sets.
+
+\item This is false. For example, let $V=\R^2$ and let $v_1=e_1$ and $v_2=e_2$ be the standard basis vectors. Let $U$ be the one-dimensional subspace with basis $\{e_1+e_2\}$. Then no subset of $\{e_1,e_2\}$ is a basis for $U$.
+\end{enumerate}
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\end{document}
