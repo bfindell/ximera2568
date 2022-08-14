@@ -1,0 +1,134 @@
+\documentclass{ximera}
+\def\MakeUppercaseUnsupportedInPdfStrings{\scshape}
+
+\newcommand{\R}{{\mathbb R}}
+
+\newcommand{\ans}{\textbf{Answer: } }
+\newcommand{\soln}{\textbf{Solution: } }
+
+\usepackage{xcolor}
+\renewenvironment{solution}{\color{blue}}{\color{black}}
+\newcommand{\exerciselabel}[2]{\textbf{\textsection #2, Exercise #1}\def\@currentlabel{#1}}
+\newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem}}
+
+
+\title{Math 2568 Homework 0}
+\date{Due: September 2, 2022}
+\author{Martin Golubitsky and Michael Dellnitz}
+
+\makeatletter
+%\newlabel{c1.1.1A}{{1}{3}}
+%\newlabel{c1.1.1C}{{3}{4}}
+\makeatother
+
+\begin{document}
+\begin{abstract}
+Online portions of Homework 0.
+\end{abstract}
+\maketitle
+
+
+\problemlabel
+
+% Comment out the references in the line below, and the file compiles.  
+
+\noindent In Exercises ~\ref{c1.1.1A} -- \ref{c1.1.1C}, 
+let $x=(2,1,3)$ and 
+$y=(1,1,-1)$ and compute the given expression.
+
+
+\exerciselabel{1}{1.1}\begin{exercise}  \label{c1.1.1A}
+  $x+y\begin{prompt}
+    = \left(\answer{3},\answer{2},\answer{2}\right).
+  \end{prompt}$.
+
+\begin{solution}
+\ans $ x + y = (3,2,2)$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{2}{1.1}\begin{exercise}  \label{c1.1.1B}
+  $2x-3y\begin{prompt}
+    = \left(\answer{1},\answer{-1},\answer{9}\right)
+  \end{prompt}$.
+  \begin{hint}
+    $2x - 3y = (4,2,6) - (3,3,-3)$.
+  \end{hint}
+  \begin{hint}
+    $(4,2,6) - (3,3,-3) = (1,-1,9)$.
+  \end{hint}  
+
+\begin{solution}
+\ans $2x - 3y = (4,2,6) - (3,3,-3) = (1,-1,9)$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{3}{1.1}\begin{exercise}  \label{c1.1.1C}
+  $4x\begin{prompt}
+    = \left(\answer{8},\answer{4},\answer{12}\right)
+    \end{prompt}$.
+
+\begin{solution}
+\ans $4x = (8,4,12)$.
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+
+
+\exerciselabel{4}{1.1}\begin{exercise} \label{c1.1.2}
+Let $A$ be the $3\times 4$ matrix
+\[
+A=\left(\begin{array}{rrrr} 2 & -1 & 0 & 1 \\ 3 & 4 & -7 & 10\\
+        6 & -3 & 4 & 2 \end{array}\right).
+\]
+\begin{enumerate}
+\item[(a)]  For which $n$ is a row of $A$ a vector in $\R^n$? \begin{prompt}\[n = \answer{4}\]\end{prompt}.
+\item[(b)]  What is the $2^{nd}$ column of $A$?
+  \begin{prompt}
+    \[
+      \left(\begin{array}{r} \answer{-1} \\ \answer{4} \\ \answer{-3} \end{array} \right)
+    \]
+  \end{prompt}
+\item[(c)] Let $a_{ij}$ be the entry of $A$ in the $i^{th}$ row
+  and the $j^{th}$ column.  What is $a_{23}-a_{31}$?
+  \begin{prompt}
+    \[
+      a_{23}-a_{31} = \answer{-13}.
+    \]
+  \end{prompt}
+\end{enumerate}
+
+\begin{solution}
+\ans
+(a) The number of entries in a row is the number of columns.  Thus, $n = 4$; \\
+(b) $\left(\begin{array}{r} -1 \\ 4 \\ -3 \end{array} \right)$;
+(c) $a_{23}-a_{31} =  -7 - 6 = -13$.
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+\end{document}
