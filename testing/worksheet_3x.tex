@@ -1,0 +1,804 @@
+
+
+\documentclass{article}
+
+\input{preamble}
+
+% Comment out next line to exclude solutions 
+
+%\usepackage{comment}\excludecomment{solution}\title{Homework 3}\author{Math 2568}\date{Due: September 10, 2018}
+\title{Homework 3}
+\author{Dr. Golubitsky}
+\date{Due: Wednesday, September 16, 2020 \@9:10am}
+
+
+%\makeatletter
+%\newlabel{c2.4.1}{{1}{92}}
+%\newlabel{c2.4.1b}{{2}{93}}
+%\newlabel{eq:avect}{{3.1.6}{122}}
+%\newlabel{c4.6.-1a}{{1}{169}}
+%\newlabel{c4.6.-1d}{{4}{169}}
+%\newlabel{lin-matrices}{{3.3.5}{142}}
+%\newlabel{columnsA}{{3.3.4}{142}}
+%\newlabel{c4.1.a10a}{{14}{123}}
+%\newlabel{c4.1.a10b}{{15}{123}}
+%\newlabel{c4.3.6a}{{6}{145}}
+%\newlabel{c4.3.6d}{{9}{146}}
+%\newlabel{sum}{{3.3.1}{138}}
+%\newlabel{product}{{3.3.2}{138}}
+%\newlabel{c4.2.a1a}{{1}{130}}
+%\newlabel{c4.2.a1c}{{3}{131}}
+%\makeatother
+\begin{document}
+\maketitle
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c2.4.1} -- \ref{c2.4.1b} row reduce the given 
+matrix to reduced echelon form by hand and determine its rank.
+
+
+\exerciselabel{2}{2.4}\begin{exercise} \label{c2.4.1b}
+$B=\left(\begin{array}{rrr}
+1 &  -2 & 3\\
+3 &  -6 & 9 \\
+1 &  -8 & 2
+         \end{array}\right)$
+  
+\begin{solution}
+\soln
+The reduced echelon form of the matrix is:
+\[
+B=\left(\begin{array}{rrc} 1 & 0 & 10/3 \\ 
+0 & 1 & 1/6 \\ 0 & 0 & 0 \end{array}\right)
+\]
+The rank of $B$ is $2$, since the reduced echelon matrix has two nonzero
+rows.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+% To which section does your exercise belong? 
+
+
+\exerciselabel{6}{2.4}\begin{exercise}\label{c2.4.2b.2}
+
+Consider the system of equations
+\[
+\begin{array}{rcl}
+x_1 + 3x_3 & = & 1 \\
+-x_1+2x_2-3x_3 & = & 1\\
+2x_2 + ax_3 & = & b
+\end{array}
+\]
+Find all pairs of real numbers $a$ and $b$ where the system has no solutions, a unique solution, or infinitely many solutions?  Your answer should subdivide the $ab$-plane into three disjoint sets.
+  
+\begin{solution}
+
+\ans Unique solutions occur when $a\neq 0$; no solution occurs when $a=0$ and $b\neq 2$; and infinitely many solutions exist when $a = 0$ and $b =2$.
+
+\soln 
+Use row reduction on the augmented matrix to obtain
+\[
+\Matrix{1 & 0 & 3 & 1\\ -1 & 2 & -3 & 1 \\ 0 & 2 & a & b} \to
+\Matrix{1 & 0 & 3 & 1\\  0 & 2 & 0 & 2 \\ 0 & 2 & a & b} \to
+\]
+\[
+\Matrixc{1 & 0 & 3 & 1\\  0 & 2 & 0 & 2 \\ 0 & 0 & a & b - 2} \to
+\Matrixc{1 & 0 & 3 & 1\\  0 & 1 & 0 & 1 \\ 0 & 0 & a & b - 2} 
+\]
+If $a\neq 0$ the system has a unique solution. If $a = 0$ we obtain the echelon form matrix
+\[
+\Matrixc{1 & 0 & 3 & 1\\  0 & 1 & 0 & 1 \\ 0 & 0 & 0 & b - 2}
+\]  
+There are no solutions if $b\neq 2$ and infinitely many solutions if $b = 2$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+
+
+\exerciselabel{11}{3.1}\begin{exercise} \label{c4.1.7}
+Let $A$ be a $2\times 2$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{c} 1 \\ 0 \end{array}\right) =
+\left(\begin{array}{r} 3 \\ -5 \end{array}\right) \\
+A\left(\begin{array}{c} 0 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 1 \\ 4 \end{array}\right).
+\end{eqnarray*}
+
+\begin{solution}
+
+\ans The equations are valid when
+\[ A = \left(\begin{array}{rr} 3 & 1 \\ -5 & 4\end{array}\right). \]
+\soln Let
+\[ A = \left(\begin{array}{rr} a_{11} & a_{12} \\ a_{21} & 
+a_{22}\end{array}\right). \]
+So
+\[ \left(\begin{array}{rr} a_{11} & a_{12} \\ a_{21} & a_{22}\end{array}\right)
+\left(\begin{array}{r} 1 \\ 0\end{array}\right) =
+\left(\begin{array}{r} 3 \\ -5\end{array}\right) \AND
+\left(\begin{array}{rr} a_{11} & a_{12} \\ a_{21} & a_{22}\end{array}\right)
+\left(\begin{array}{r} 0 \\ 1\end{array}\right) =
+\left(\begin{array}{r} 1 \\ 4.\end{array}\right) \]
+These matrix equations are equivalent to the linear equations
+\[ \begin{array}{rcl}
+a_{11} & = & 3 \\
+a_{21} & = & -5 \\
+a_{12} & = & 1 \\
+a_{22} & = & 4.\end{array} \]
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{13}{3.1}\begin{exercise} \label{c4.1.9}
+Is there an upper triangular $2\times 2$ matrix $A$ such that
+\begin{equation}  \label{eq:avect}
+A\vectwo{1}{0} = \vectwo{1}{2}?
+\end{equation}
+Is there a symmetric $2\times 2$ matrix $A$ satisfying \eqref{eq:avect}?
+
+\begin{solution}
+
+\ans There is no $2 \times 2$ upper triangular matrix $A$ that
+satisfies equation \eqref{eq:avect}, but any symmetric matrix $A$ of the form
+\[ A = \mattwo{1}{2}{2}{a_{22}}, \]
+where $a_{22}$ is a real number, satisfies \eqref{eq:avect}.
+
+\soln Let $A$ be the upper triangular matrix
+\[ \mattwo{a_{11}}{a_{12}}{0}{a_{22}}. \]
+The resulting matrix equation
+\[ \mattwo{a_{11}}{a_{12}}{0}{a_{22}}
+\vectwo{1}{0} = \vectwo{1}{2} \]
+yields the linear equations
+\[ \begin{array}{rcl}
+a_{11} & = & 1 \\
+0 & = & 2.\end{array} \]
+The second equation is inconsistent, so there is no solution.
+
+\para Then let $A$ be the symmetric matrix
+\[ \mattwo{a_{11}}{a_{12}}{a_{12}}{a_{22}}. \]
+Write the matrix equation
+\[ \mattwo{a_{11}}{a_{12}}{a_{12}}{a_{22}}
+\vectwo{1}{0} = \vectwo{1}{2}, \]
+from which we obtain the consistent linear system
+\[ \begin{array}{rcl}
+a_{11} & = & 1 \\
+a_{12} & = & 2.\end{array} \]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{6}{3.2}\begin{exercise} \label{c4.2.1c}
+What $2\times 2$ matrix rotates the plane clockwise by $90^\circ$ while
+dilating it by a factor of $2$?
+
+\begin{solution}
+\ans
+\[
+2R_{(-90^\circ)} = \mattwo{2\cos (-90^\circ)}{-2\sin
+(-90^\circ)}{2\sin (-90^\circ)}{2\cos (-90^\circ)} = \mattwo{0}{2}{-2}{0}.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{13}{3.2}\begin{exercise} \label{c4.2.3}
+Find a $2\times 3$ matrix $P$ that projects three dimensional $xyz$ space onto
+the $xy$ plane.  {\bf Hint:} Such a matrix will satisfy
+\[
+P\left(\begin{array}{c} 0 \\ 0 \\ z \end{array}\right) = \vectwo{0}{0}
+\AND
+P\left(\begin{array}{c} x \\ y \\ 0 \end{array}\right) = \vectwo{x}{y}.
+\]
+
+\begin{solution}
+
+\ans The matrix is
+\[ P = \left(\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0\end{array}\right). \]
+
+\soln Let
+\[ P = \left(\begin{array}{rrr} p_{11} & p_{12} & p_{13} \\
+p_{21} & p_{22} & p_{23}\end{array}\right). \]
+Note that a matrix that projects $xyz$ space onto the $xy$ plane
+satisfies the vector equations:
+\[ \begin{array}{c} \left(\begin{array}{rrr} p_{11} & p_{12} &
+p_{13} \\ p_{21} & p_{22} & p_{23} \end{array}\right)
+\vecthree{1}{0}{0} = \vectwo{1}{0} \\
+\left(\begin{array}{rrr} p_{11} & p_{12} & p_{13} \\ p_{21} &
+p_{22} & p_{23} \end{array}\right) \vecthree{0}{1}{0} = \vectwo{0}{1} \\
+\left(\begin{array}{rrr} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22}
+& p_{23} \end{array}\right) \vecthree{0}{0}{1} = \vectwo{0}{0} \end{array} 
+\]
+from which we get the equations
+\[ \begin{array}{rrrrrrr}
+p_{11} & = & 1 \\
+p_{21} & = & 0 \end{array},
+\quad
+\begin{array}{rrrrrrr}
+p_{12} & = & 0 \\
+p_{22} & = & 1 \end{array}
+\AND
+\begin{array}{rrrrrrr}
+p_{13} & = & 0 \\
+p_{23} & = & 0 \end{array}. 
+\]
+Substitute these values back into $P$ to obtain the solution.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{5}{3.3}\begin{exercise} \label{c4.3.5}
+Let $x=(3,-2)$, $y=(2,3)$, and $z=(1,4)$.  For which real
+numbers $\alpha,\beta,\gamma$ does
+\[
+\alpha x + \beta y + \gamma z = (1,-2)?
+\]
+
+\begin{solution}
+
+\ans The equation
+\[ \alpha(3,-2) + \beta(2,3) + \gamma(1,4) = (1,-2) \]
+holds for any real numbers $\alpha$,$\beta$,
+$\gamma$ such that $\alpha = \frac{5}{13}\gamma +
+\frac{7}{13}$ and $\beta = -\frac{14}{13}\gamma
+- \frac{4}{13}$.
+
+\soln Write the equation as the linear system
+\[ \begin{array}{rrrrrrl}
+3\alpha & + & 2\beta & + & \gamma & = & 1 \\
+-2\alpha & + & 3\beta & + & 4\gamma & = & -2. \end{array} \]
+The augmented matrix
+\[ \left(\begin{array}{rrr|r}
+3 & 2 & 1 & 1 \\
+-2 & 3 & 4 & -2 \end{array}\right) \]
+row reduces to
+\[ \left(\begin{array}{rrr|r}
+1 & 0 & -\frac{5}{13} & \frac{7}{13} \\
+0 & 1 & \frac{14}{13} & -\frac{4}{13} \end{array}\right) \]
+and the equation is valid for any values of $\alpha$,$\beta$,
+and $\gamma$ that satisfy this system.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{10}{3.3}\begin{exercise}\label{c4.3.6A}
+
+Determine which of the following maps are linear maps.  If the map is linear give the matrix associated to the linear map. Explain your reasoning.
+\begin{enumeratea}
+
+\item $L_1:\R^2\to\R^2$ where $L_1\Matrix{x\\y} = \Matrixc{x + y+ 3\\ 2y +1}$
+
+\item $L_2:\R^2\to\R^3$ where $L_2\Matrix{x\\y} = \Matrixc{\sin x\\ x + y\\ 2y}$
+ 
+\item $L_3:\R^2\to\R$ where $L_3\Matrix{x\\y} = x + y $
+  
+\end{enumeratea}
+  
+\begin{solution}
+
+\ans (a) Not linear; (b) not linear; (c) linear with $1\times 2$ matrix $A= \Matrix{1 & 1}$.
+
+\soln 
+\begin{enumeratea}
+
+\item Linear maps map the origin to the origin.  $L_1\Matrix{0\\0} = \Matrix{3\\1} \neq 0$. So $L_1$ is not linear.
+
+\item Linear maps $L$ satisfy $L(cX) = cL(X)$.  In this case 
+\[
+cL_2\Matrix{x\\y} =  \Matrixc{c\sin x\\ cx + cy\\ 2cy} \AND
+L_2\left(\Matrix{cx\\cy}\right) =  \Matrixc{\sin(cx)\\ cx + cy\\ 2cy}
+\]
+Since $\sin(cx)\neq c\sin(x)$, $L_3$ is not linear.
+
+\item All matrix mappings are linear.  Since we can write
+\[
+L_3 \Matrix{x\\y} = x+ y = \Matrix{1 &1} \Matrix{x\\y}  
+\]
+it follows that $L_3$ is linear with $1\times 2$ matrix $A =  \Matrix{1 &1}$.
+\end{enumeratea}
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c4.6.-1a} -- \ref{c4.6.-1d} determine whether or 
+not the matrix products $AB$ or $BA$ can be computed for each given pair of 
+matrices $A$ and $B$.  If the product is possible, perform the computation.
+
+
+\exerciselabel{2}{3.5}\begin{exercise}  \label{c4.6.-1b}
+$A=\left(\begin{array}{rrr} 0 & -2 & 1\\ 4 & 10 & 0 \end{array}\right)$
+and $B=\left(\begin{array}{rr} 0 & 2 \\ 3 & -1 \end{array}\right)$.
+
+\begin{solution}
+\ans $AB$ is not defined. $BA=\left(\begin{array}{rrr} 8 &  20 &  0\\
+ -4 & -16  &  3\end{array}\right)$
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{10}{3.5}\begin{exercise} \label{c4.6.2}
+Let
+\[
+A=\mattwo{2}{5}{1}{4} \AND B=\mattwo{a}{3}{b}{2}.
+\]
+For which values of $a$ and $b$ does $AB=BA$?
+
+\begin{solution}
+
+\ans 
+\[
+B = \mattwo{\frac{4}{5}}{3}{\frac{3}{5}}{2}.
+\]
+
+\soln Compute
+\[
+\begin{array}{rcl}
+AB & = & BA \\
+\mattwo{2}{5}{1}{4}\mattwo{a}{3}{b}{2} & = &
+\mattwo{a}{3}{b}{2}\mattwo{2}{5}{1}{4} \\
+\mattwo{2a+5b}{16}{a+4b}{11} & = & \mattwo{2a+3}{5a+12}{2b+2}{5b+8}.
+\end{array}
+\]
+This equation can be rewritten as the system
+\[
+\begin{array}{rcl}
+2a + 5b & = & 2a + 3 \\
+16 & = & 5a + 12 \\
+a + 4b & = & 2b + 2 \\
+11 & = & 5b + 8 \end{array}
+\]
+which yields the solution $a = 4/5$ and $b = 3/5$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+
+
+
+
+\problemlabel
+
+\exerciselabel{16}{3.3}\begin{exercise}  \label{c4.3.12}
+Let $P:\R^n\to\R^m$ and $Q:\R^n\to\R^m$ be linear mappings. 
+\begin{enumeratea}
+\item Prove that $S:\R^n\to\R^m$ defined by
+\[
+S(x) = P(x) + Q(x)
+\]
+is also a linear mapping.  
+\item Theorem~\ref{lin-matrices} states that there are matrices $A$, $B$ and $C$ such that
+\[
+P = L_A \AND Q = L_B \AND S = L_C .
+\]
+What is the relationship between the matrices $A$, $B$, and $C$?
+\end{enumeratea}
+
+\begin{solution}
+
+\soln The mapping $L$ is linear if $L(x + y) = L(x) + L(y)$ and if $cL(x) = L(cx)$.  
+\begin{enumeratea}
+\item We can use the assumption that $P(x)$ and $Q(x)$ are linear mappings to show:
+\[ 
+\begin{array}{rcl}
+S(x + y) & = & P(x + y) + Q(x + y) \\
+& = & P(x) + P(y) + Q(x) + Q(y) \\
+& = & [P(x) + Q(x)] + [P(y) + Q(y)] \\
+& = & S(x) + S(y) 
+\end{array} 
+\]
+and
+\[ 
+\begin{array}{rcl}
+cS(x) & = & cP(x) + cQ(x) \\
+& = & P(cx) + Q(cx) \\
+& = & S(cx). 
+\end{array} 
+\]
+
+\item Assume that $S = L_C$, $P = L_A$ and $Q = L_B$ for
+$m \times n$ matrices $A$, $B$, $C$.  We claim that
+$A = B + C$.  By definition, $A(e_j) = L_A(e_j) =  L_B(e_j) + L_C(e_j) = (B+C)(e_j)$.  
+Lemma~\ref{columnsA} implies that the $j^{th}$ column of 
+$C$ is the sum of the $j^{th}$ column of $A$  and the $j^{th}$ column of $B$ 
+for all columns $j$, so $C = A + B$.
+\end{enumeratea}
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% 2.4 #2, #4
+% 2.5 #1
+% 3.1 # 5, 7, 11
+	% 3.1 #6
+% 3.2 # 3, 6
+	% 3.2 # 12, # 8
+% 3.3 # 5, 7, 8, 11
+
+
+\matlabproblemlabel
+
+\noindent In Exercises~\ref{c4.1.a10a} -- \ref{c4.1.a10b} use \Matlab to
+compute $b=Ax$ for the given $A$ and $x$.
+
+
+\exerciselabel{15}{3.1}\begin{computerExercise} \label{c4.1.a10b}
+\begin{matlabEquation}\label{multiplication-exercise-2}
+A=\left(
+\begin{array}{rrrrrrr}
+    14 & -22  &-26 &  -2 & -77 & 100 & -90\\
+    26 &  25  &-15 & -63 &  33 &  92 &  14\\
+   -53 &  40  & 19 &  40 & -27 & -88 &  40\\
+    10 & -21  & 13 &  97 & -72 & -28 &  92\\
+    86 & -17  & 43 &  61 &  13 &  10 &  50\\
+   -33 &  31  &  2 &  41 &  65 & -48 &  48\\
+    31 &  68  & 55 &  -3 &  35 &  19 & -14
+\end{array}
+\right)\end{matlabEquation}
+and
+\begin{equation*}
+x = \left( \begin{array}{r} 2.7\\   6.1\\   -8.3\\    8.9\\    8.3\\    2\\
+  -4.9
+\end{array}\right).
+\end{equation*}
+
+\begin{solution}
+Load the system into \Matlabp, then type {\tt b = A*x}
+to obtain:
+\begin{verbatim}
+b =
+  103.5000
+  175.8000
+ -296.9000
+ -450.1000
+  197.4000
+  656.6000
+  412.4000
+\end{verbatim}
+
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{8}{3.2}\begin{exercise} \label{c4.2.2b}
+Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the $y$ axis.
+
+\begin{solution}
+\soln The map $L_A$ that reflects vectors across the $y$-axis is
+$(x,y) \rightarrow (-x,y)$.  The matrix is
+\[
+A = \mattwo{-1}{0}{0}{1}.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{1}{2.5}\begin{exercise} \label{c2.5.1}
+Solve the system of equations
+\[
+\begin{array}{rcrcr}
+ x_1 & - & ix_2 & = &  1\\
+ix_1 & + & 3x_2 & = & -1
+\end{array}
+\]
+Check your answer using \Matlabp.
+\begin{prompt}
+  $\left(\begin{array}{c} x_1 \\ x_2\end{array}\right) =
+\left(\begin{array}{r} \answer{\frac{3}{2} - \frac{1}{2}i} \\ \answer{-\frac{1}{2} - \frac{1}{2}i}\end{array}\right).$
+\end{prompt}
+
+\begin{solution}
+
+$\left(\begin{array}{c} x_1 \\ x_2\end{array}\right) =
+\left(\begin{array}{r} \frac{3}{2} - \frac{1}{2}i \\ -\frac{1}{2} -
+\frac{1}{2}i\end{array}\right).$
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c4.3.6a} -- \ref{c4.3.6d} determine
+whether the given transformation is linear.
+
+
+\exerciselabel{7}{3.3}\begin{exercise} \label{c4.3.6b}
+  $T:\R^2\to\R^2$ defined by $T(x_1,x_2)=(x_1+x_1x_2,2x_2)$.
+
+\begin{solution}
+\ans The transformation $T(x,y) = (x + xy, 2y)$ is not linear.
+
+\soln If $T$ is a linear transformation, then
+\[
+T(x_1 + x_2,y_1 + y_2) = T(x_1,y_1) + T(x_2,y_2)
+\]
+for any real numbers $x_1$,$x_2$,$y_1$,$y_2$.  However,
+\[
+\begin{array}{rcl}
+T(1,1) & = & (2,2) \\
+T(1,0) + T(0,1) & = & (1,0) + (0,2) = (1,2).\end{array}
+\]
+Therefore $T(1,1) \neq T(1,0) + T(0,1)$ and $T$ is not linear.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{9}{3.3}\begin{exercise} \label{c4.3.6d}
+  $T:\R^2\to\R^3$ defined by $T(x_1,x_2)=(1,x_1+x_2,2x_2)$
+
+\begin{solution}
+The transformation $T(x,y) = (1,x + y, 2y)$ is not linear
+because $T(0,0) = (1,0,0) \neq 0$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{12}{3.3}\begin{exercise} \label{c4.3.8}
+The {\em cross product\/} of two $3$-vectors $x=(x_1,x_2,x_3)$
+and $y=(y_1,y_2,y_3)$ is the $3$-vector
+\[
+x\times y = (x_2y_3-x_3y_2,-(x_1y_3-x_3y_1),x_1y_2-x_2y_1).
+\]
+Let $K=(2,1,-1)$.  
+\begin{enumeratea}
+\item Show that the mapping $L:\R^3\to\R^3$ defined by
+\[
+L(x) = x\times K
+\]
+is a linear mapping.  
+\item
+Find the $3\times 3$ matrix $A$ such that
+\[
+L(x) = Ax,
+\]
+that is, $L=L_A$.
+\end{enumeratea}
+\begin{solution}
+
+\ans The matrix of linear mapping $L$ is
+\[
+A = \matthree{0}{-1}{-1}{1}{0}{2}{1}{-2}{0}.
+\]
+
+\soln Let $X = (x_1,x_2,x_3)$ and let $Y = (y_1,y_2,y_3)$.  
+Since $K = (2,1,-1)$,
+\[
+L(X) = (x_1,x_2,x_3) \times K = 
+(-x_2 - x_3, x_1 + 2x_3, x_1 - 2x_2).
+\]
+\begin{enumeratea}
+\item To show that $L(X)$ is a linear mapping, first demonstrate that
+\eqref{sum} is valid:
+\[
+\begin{array}{rcl}
+L(X + Y) & = & L(x_1 + y_1,x_2 + y_2,x_3 + y_3) \\
+& = & (-(x_2 + y_2) - (x_3 + y_3), (x_1 + y_1) + 2(x_3 + y_3),
+(x_1 + y_1) - 2(x_2 + y_2)) \\
+& = & (-x_2 - x_3, x_1 + 2x_3, x_1 - 2x_2) +
+(-y_2 - y_3, y_1 + 2y_3, y_1 - 2y_2) \\
+& = & L(X) + L(Y), \end{array}
+\]
+then show that \eqref{product} is valid:
+\[
+\begin{array}{rcl}
+cL(X) & = & cL(x_1,x_2,x_3) \\
+& = & c(-x_2 - x_3, x_1 + 2x_3, x_1 - 2x_2) \\
+& = & (-cx_2 - cx_3, cx_1 + 2cx_3, cx_1 - 2cx_2) \\
+& = & L(cx_1,cx_2,cx_3) \\
+& = & L(cX). \end{array}
+\]
+
+\item Find $A$ by noting that $L(e_j) = Ae_j$ is the $j^{th}$ column of $A$,
+and computing
+\[ \begin{array}{l}
+L(e_1) = L(1,0,0) = (0,1,1) \\
+L(e_2) = L(0,1,0) = (-1,0,-2) \\
+L(e_3) = L(0,0,1) = (-1,2,0). \end{array} \]
+\end{enumeratea}
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{9}{3.1}\begin{exercise} \label{c4.1.4}
+Write the system of linear equations
+\begin{eqnarray*}
+2x_1 + 3x_2 - 2x_3 & = & 4\\
+6x_1 -5x_3 & = & 1
+\end{eqnarray*}
+in the matrix form $Ax=b$.
+
+\begin{solution}
+
+\[
+\left(\begin{array}{rrr} 2 & 3 & -2 \\ 6 & 0 & -5\end{array}\right) 
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\end{array}\right) = 
+\left(\begin{array}{r} 4 \\ 1\end{array}\right)
+\]
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{10}{3.1}\begin{exercise} \label{c4.1.6}
+Find all solutions to
+\[
+\left(\begin{array}{rrrr} 1 & 3 & -1 & 4 \\ 2 & 1 & 5 & 7 \\
+3 & 4 & 4 & 11 \end{array} \right)
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
+\left(\begin{array}{c} 14 \\ 17 \\31 \end{array}\right).
+\]
+
+\begin{solution}
+
+\ans All solutions are of the form
+\[ \left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
+\left(\begin{array}{c} \frac{37}{5} - \frac{16}{5}x_3 - \frac{17}{5}x_4 \\
+\frac{11}{5} + \frac{7}{5}x_3 - \frac{1}{5}x_4 \\ x_3 \\ x_4\end{array}\right)
+\]
+where $x_3$ and $x_4$ are free parameters.
+
+\soln Create the augmented matrix
+\[ \left(\begin{array}{rrrr|r}
+1 & 3 & -1 & 4 & 14 \\
+2 & 1 & 5 & 7 & 17 \\
+3 & 4 & 4 & 11 & 31\end{array}\right) \]
+which can be row reduced to
+\[ \left(\begin{array}{rrrr|r}
+1 & 0 & \frac{16}{5} & \frac{17}{5} & \frac{37}{5} \\
+0 & 1 & -\frac{7}{5} & \frac{1}{5} & \frac{11}{5} \\
+0 & 0 & 0 & 0 & 0\end{array}\right), \]
+yielding the desired solution.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c4.2.a1a} -- \ref{c4.2.a1c} find a nonzero
+vector that is mapped to the origin by the given matrix.
+
+
+\exerciselabel{3}{3.2}\begin{exercise} \label{c4.2.a1c}
+$C=\mattwo{3}{-1}{-6}{2}$.
+
+\begin{solution}
+
+\ans If $x = (x_1,3x_1)^t$, where $x_1$ is any real scalar, then $Cx = 0$.
+
+\soln Solve $Cx = 0$ by row reducing $C$ to find that $Cx = 0$ when
+$x_1 - \frac{1}{3}x_2 = 0$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+

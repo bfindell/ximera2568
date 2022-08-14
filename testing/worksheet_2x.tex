@@ -1,0 +1,429 @@
+\documentclass{article}
+
+\input{preamble}
+
+\title{Homework 2}
+\author{Dr. Golubitsky}
+\date{Due: Wednesday, September 9, 2020 \@9:10am}
+
+%\makeatletter
+%\newlabel{c2.3.6a}{{1}{75}}
+%\newlabel{c2.3.6c}{{3}{75}}
+%\newlabel{c2.3.7a}{{4}{75}}
+%\newlabel{c2.3.7c}{{6}{75}}
+%\newlabel{e:refexamp6}{{2.3.14}{74}}
+%\newlabel{c2.3.10a}{{10}{77}}
+%\newlabel{c2.3.10b}{{11}{78}}
+%\newlabel{c2.3.1a}{{21}{80}}
+%\newlabel{c2.3.1c}{{23}{81}}
+%\newlabel{number}{{2.4.6}{89}}
+%\newlabel{c2.4.3a}{{7}{95}}
+%\newlabel{c2.4.3d}{{10}{96}}
+%\makeatother
+\begin{document}
+\maketitle
+
+
+\problemlabel
+
+
+
+\exerciselabel{9}{1.4}\begin{exercise} \label{c1.4.2}
+Find a real number $a\begin{prompt}=\answer{10/3}\end{prompt}$ so that the vectors
+\[
+x = (1,3,2) \AND y = (2,a,-6)
+\]
+are perpendicular.
+\begin{hint}
+  The vectors $x$ and $y$ are perpendicular when
+$(1,3,2) \cdot (2,a,-6) = 3a - 10 = 0$.
+\end{hint}
+\begin{hint}
+  This means that $a = \frac{10}{3}$.
+\end{hint}
+
+\begin{solution}
+\ans $a = \frac{10}{3}$.
+
+\soln The vectors $x$ and $y$ are perpendicular when $(1,3,2) \cdot (2,a,-6) = 3a - 10 = 0$.  Thus, $a = \frac{10}{3}$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{7}{2.1}\begin{exercise} \label{c2.1.11}
+\begin{itemize}
+\item[(a)] Find a quadratic polynomial $p(x) = ax^2 + bx + c$
+  satisfying $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$.
+  \begin{prompt}
+    The quadratic $p(x) = \answer{-x^2 + 5x + 1}$ satisfies these conditions.
+  \end{prompt}
+  \begin{hint}
+    Since $p(x) = ax^2 + bx + c$ for any quadratic equation, we find
+this solution by evaluating $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$,
+which yields the system of equations
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & 1 \\
+p(1) & = & a & + & b & + & c & = & 5 \\
+p(-1) & = & a & - & b & + & c & = & -5\end{array}
+\]
+We solve this system to obtain $(a,b,c) = (-1,5,1)$, then substitute
+these coefficients into the general quadratic.
+  \end{hint}
+\item[(b)] Prove that for every triple of real numbers $L$, $M$,
+and $N$, there is a quadratic polynomial satisfying $p(0) = L$,
+$p(1) = M$, and $p(-1) = N$.
+\begin{hint}
+   Let $p(x) = ax^2 + bx + c$ be a quadratic equation.  Then, the
+assumptions $p(0) = L$, $p(1) = M$, and $p(-1) = N$ imply:
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & L \\
+p(1) & = & a & + & b & + & c & = & M \\
+p(-1) & = & a & - & b & + & c & = & N\end{array}
+\]
+The unique solution to this system is $(a,b,c) =
+(\frac{M + N - 2L}{2},\frac{M - N}{2},L)$.
+\end{hint}
+\item[(c)] Let $x_1,x_2,x_3$ be three unequal real
+numbers and let $A_1,A_2,A_3$ be three real numbers.  Show
+that finding a quadratic polynomial $q(x)$ that satisfies
+$q(x_i) = A_i$ is equivalent to solving a system of three
+linear equations.
+\begin{hint}
+   Substituting $q(x_i) = A_i$, for $i = 1,2,3$, into the standard
+quadratic equation $q(x) = ax^2 + bx + c$ yields
+\[
+\begin{array}{ccccccc}
+ax_1^2 & + & bx_1 & + & c & = & A_1 \\
+ax_2^2 & + & bx_2 & + & c & = & A_2 \\
+ax_3^2 & + & bx_3 & + & c & = & A_3\end{array}
+\]
+Finding the appropriate quadratic polynomial would be equivalent to
+solving this system of linear equations for $a$, $b$, and $c$ in
+terms of $A_1$, $A_2$, and $A_3$.
+\end{hint}
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans The quadratic $p(x) = -x^2 + 5x + 1$ satisfies these conditions.
+
+\soln Since $p(x) = ax^2 + bx + c$ for any quadratic equation, we find
+this solution by evaluating $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$,
+which yields the system of equations
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & 1 \\
+p(1) & = & a & + & b & + & c & = & 5 \\
+p(-1) & = & a & - & b & + & c & = & -5\end{array}
+\]
+We solve this system to obtain $(a,b,c) = (-1,5,1)$, then substitute
+these coefficients into the general quadratic.
+
+(b) Let $p(x) = ax^2 + bx + c$ be a quadratic equation.  Then, the
+assumptions $p(0) = L$, $p(1) = M$, and $p(-1) = N$ imply:
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & L \\
+p(1) & = & a & + & b & + & c & = & M \\
+p(-1) & = & a & - & b & + & c & = & N\end{array}
+\]
+The unique solution to this system is $(a,b,c) =
+(\frac{M + N - 2L}{2},\frac{M - N}{2},L)$.
+
+(c) Substituting $q(x_i) = A_i$, for $i = 1,2,3$, into the standard
+quadratic equation $q(x) = ax^2 + bx + c$ yields
+\[
+\begin{array}{ccccccc}
+ax_1^2 & + & bx_1 & + & c & = & A_1 \\
+ax_2^2 & + & bx_2 & + & c & = & A_2 \\
+ax_3^2 & + & bx_3 & + & c & = & A_3\end{array}
+\]
+Finding the appropriate quadratic polynomial would be equivalent to
+solving this system of linear equations for $a$, $b$, and $c$ in
+terms of $A_1$, $A_2$, and $A_3$.
+
+
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+% To which section does your exercise belong? 
+
+
+\exerciselabel{5}{2.2}\begin{exercise}\label{c2.2.85}
+
+Find the cosine of the angle between the normal vectors to the planes 
+\[
+2x - 2y + z = 14 \AND x + y - 2z = -10.
+\]
+
+  
+\begin{solution}
+
+\ans $-\frac{2}{3\sqrt{6}}$
+
+\soln The normal vectors are $v = (2, -2, 1)$ and $w = ( 1, 1 , -2)$.  The cosine of the angle $\theta$ between the normal vectors is 
+\[
+\cos(\theta) = \frac{v\cdot w}{||v||\; ||w||} = \frac{-2}{\sqrt{9}\sqrt{6}} = -\frac{2}{3\sqrt{6}}
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c2.3.6a} -- \ref{c2.3.6c} determine
+whether the given matrix is in reduced echelon form.
+
+
+\exerciselabel{2}{2.3}\begin{exercise} \label{c2.3.6b}
+$\left(\begin{array}{rrrr}
+1 &  0 & -2 &   0   \\
+0 &  1 &  4 &   0    \\
+         0 &  0 &  0 &   1  \end{array}\right)$.
+
+\begin{solution}
+\ans The matrix is in reduced echelon form.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c2.3.7a} -- \ref{c2.3.7c} we list
+the reduced echelon form of an augmented matrix of a system of
+linear equations.  Which columns in these augmented matrices
+contain pivots?  Describe all solutions to these systems of
+equations in the form of \eqref{e:refexamp6}.
+
+
+\exerciselabel{5}{2.3}\begin{exercise} \label{c2.3.7b}
+$\left(\begin{array}{rrrr|r}
+ 1  &  2 & 0 & 0 & 0\\
+ 0  &  0 & 1 & 1 & 0\\
+ 0  &  0 & 0 & 0 & 1
+       \end{array}\right)$.
+
+\begin{solution}
+\ans The $1^{st}$, $3^{rd}$, and $5^{th}$ columns of the matrix
+contain pivots.  Since the last row of the matrix translates to the linear
+equation $0 = 1$, the system is inconsistent, and there are no solutions.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{9}{2.3}\begin{exercise} \label{c2.3.9}
+Use row reduction and back substitution to solve the following
+system of two equations in three unknowns:
+\[
+\begin{array}{rcrcrcrc}
+ x_1 & - & x_2 & + & x_3 & = & 1 \\
+2x_1 & + & x_2 & - & x_3 & = & -1
+\end{array}
+\]
+
+\begin{solution}
+
+\ans The solution to this system is
+\[
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3\end{array}\right) =
+\left(\begin{array}{c} 0 \\ x_3 - 1 \\ x_3\end{array}\right) = \Matrix{0 \\ -1 \\ 0} + x_3\Matrix{0 \\ 1 \\ 1},
+\]
+where $x_3$ is any real number.
+
+\soln Row reduce the augmented matrix of the system:
+\[
+\left(\begin{array}{rrr|r} 1 & -1 & 1 & 1 \\ 2 & 1 & -1 & -1\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r} 1 & 0 & 0 & 0 \\ 0 & 1 & -1 & -1\end{array}\right).
+\]
+Although $(1,2,2)$ is not a solution to this system, there is a solution
+for which $x_3 = 2$, namely $(0,1,2)$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c2.3.10a} -- \ref{c2.3.10b} determine the
+augmented matrix and all solutions for each system of linear equations
+
+
+\exerciselabel{11}{2.3}\begin{exercise} \label{c2.3.10b}
+$\begin{array}{rcl}
+2x-y+z+w & = & 1\\
+   x+2y-z+w & = & 7 \end{array}$.
+
+
+\begin{solution}
+\soln The augmented matrix for this system is
+\[
+\left(\begin{array}{rrrr|r} 2 & -1 & 1 & 1 & 1 \\ 1 & 2 & -1 & 1 & 7
+\end{array}\right)
+\]
+which can be row reduced to
+\[
+\left(\begin{array}{rrrr|r} 1 & 0 & 1/5 & 3/5 &
+9/5 \\ 0 & 1 & -3/5 & 1/5 & 13/5
+\end{array}\right).
+\]
+The solution set is therefore
+\[
+\left(\begin{array}{c} x \\ y \\ z \\ w \end{array}\right) =
+\left(\begin{array}{c} 9/5 - 1/5\; z - 3/5\; w
+\\ 13/5 + 3/5\; z - 1/5 \; w \\ z \\ w \end{array}\right)=
+\Matrixc{9/5 \\ 13/5 \\ 0 \\ 0} + z\Matrixc{-1/5\\  3/5 \\ 1 \\ 0} + w\Matrixc{-3/5 \\ -1/5 \\ 0 \\ 1}.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\matlabproblemlabel
+
+\noindent In Exercises~\ref{c2.3.1a} -- \ref{c2.3.1c} use elementary row
+operations and \Matlab to put each of the given matrices into row echelon
+form.  Suppose that the matrix is the augmented matrix for a system of
+linear equations.  Is the system consistent or inconsistent?
+
+
+\exerciselabel{23}{2.3}\begin{computerExercise} \label{c2.3.1c}
+\[
+\left(\begin{array}{rrrr}
+ -2 & 1 &  9 & 1\\
+  3 & 3 & -4 & 2\\
+  1 & 4 &  5 & 5
+\end{array}\right).
+\]
+
+\begin{solution}
+\ans The system is inconsistent.
+
+\soln The row-reduced matrix is:
+A = 
+\begin{verbatim}
+1.0000         0   -3.4444         0
+         0    1.0000    2.1111         0
+         0         0         0    1.0000
+\end{verbatim}
+This matrix represents an inconsistent linear system.
+
+
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problemlabel
+
+\exerciselabel{4}{2.4}\begin{exercise} \label{c2.4.2}
+The augmented matrix of a consistent system of five equations in seven
+unknowns has rank equal to three.  How many parameters are needed to
+specify all solutions?
+\begin{prompt}
+  There are $\answer{4}$ parameters needed to specify all solutions.
+\end{prompt}
+\begin{hint}
+  According to Theorem \ref{number}, $n - \ell$
+parameters are needed to parameterize the set of all solutions of a
+linear system, where $n$ is the number of unknowns, and $\ell$ is the
+rank of the reduced echelon matrix.  In this case, $n = 7$ and $\ell =
+3$.
+\end{hint}
+
+\begin{solution}
+
+\ans Four parameters are needed to specify all solutions.
+
+\soln According to Theorem \ref{number}, $n - \ell$
+parameters are needed to parameterize the set of all solutions of a
+linear system, where $n$ is the number of unknowns, and $\ell$ is the
+rank of the reduced echelon matrix.  In this case, $n = 7$ and $\ell =
+3$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\matlabproblemlabel
+
+\noindent In Exercises~\ref{c2.4.3a} -- \ref{c2.4.3d}, use {\tt rref} on
+the given augmented matrices to determine whether the associated system of
+linear equations is consistent or inconsistent.  If the equations are
+consistent, then determine how many parameters are needed to enumerate
+all solutions.
+
+
+\exerciselabel{7}{2.4}\begin{computerExercise} \label{c2.4.3a}
+\begin{matlabEquation}\label{MATLAB:17}
+A = \left(\begin{array}{rrrrr|r}
+2 & 1 & 3 & -2 & 4 & 1 \\
+5 & 12 & -1 & 3 & 5 & 1 \\
+-4  &  -21 &    11  &  -12  &    2  &    1  \\
+23  &  59  &  -8   & 17  &  21  &   4
+\end{array}\right) \quad
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans Matrix $A$ is consistent and requires 3 parameters to enumerate
+all solutions.
+
+\soln
+\begin{verbatim}
+rref(A) = 
+    1.0000         0    1.9474   -1.4211    2.2632    0.5789
+         0    1.0000   -0.8947    0.8421   -0.5263   -0.1579
+         0         0         0         0         0         0
+         0         0         0         0         0         0
+\end{verbatim}
+
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

@@ -1,17 +1,8 @@
 \usepackage{pgf,tikz}
-%\usepackage{graphicx}
-%\usepackage{epstopdf}
-%\usepackage{morewrites}
 \usepackage{mathrsfs}
 \usetikzlibrary{shapes,arrows}
 \usepackage{framed}
 \pgfplotsset{compat=1.13}
-%\def\MakeUppercaseUnsupportedInPdfStrings{\scshape}
-
-\def\fixnote#1{\begin{framed}{\textcolor{red}{Fix note: #1}}\end{framed}}  % Allows insertion of red notes about needed edits
-%\def\fixnote#1{}
-
-\def\detail#1{{\textcolor{blue}{Detail: #1}}}   
 
 \graphicspath{
   {./}
@@ -20,24 +11,14 @@
 
 \newenvironment{sectionOutcomes}{}{}
 
-%\pdfOnly{\renewcommand{\answer}[1][[yy]{\fbox{\hspace{1in}\rule[-.3\baselineskip]{0pt}{15pt}}}}
-
-
-\newcommand{\N}{\mathbb N}
-\newcommand{\W}{\mathbb W}
-\newcommand{\C}{\mathbb C}
-\newcommand{\Z}{\mathbb Z}
-\newcommand{\Q}{\mathbb Q}
-\newcommand{\R}{{\mathbb R}}
-
 
 % Below is the preamble from the textbook in /laode, by Golubitsky and Dellnitz
 % ... with problematic stuff commented out
 % Followed by the hw-preamble from worksheet-builder
 
-\usepackage{epsfig}
+%\usepackage{ulem}
+\usepackage[normalem]{ulem}
 
-\usepackage{epstopdf}
 \epstopdfsetup{outdir=./}
 
 \usepackage{morewrites}
@@ -53,6 +34,17 @@
 
 \newenvironment{computerExercise}{\begin{exercise}}{\end{exercise}}
 
+%\newcounter{ccounter}
+%\setcounter{ccounter}{1}
+%\newcommand{\Chapter}[1]{\setcounter{chapter}{\arabic{ccounter}}\chapter{#1}\addtocounter{ccounter}{1}}
+
+%\newcommand{\section}[1]{\section{#1}\setcounter{thm}{0}\setcounter{equation}{0}}
+
+%\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+%\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+%\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+
+%\newcommand{\Sec}[2]{\section{#1}\markright{\arabic{ccounter}.\arabic{section}.#2}\setcounter{equation}{0}\setcounter{thm}{0}\setcounter{figure}{0}}
   
 \newcommand{\Sec}[2]{\section{#1}}
 
@@ -65,11 +57,22 @@
 \newcommand{\trademark}{{R\!\!\!\!\!\bigcirc}}
 %\newtheorem{exercise}{}
 
-\newcommand{\dfield}{{\sf dfield9}}
-\newcommand{\pplane}{{\sf pplane9}}
-\newcommand{\PPLANE}{{\sf PPLANE9}}
+\newcommand{\dfield}{{\sf SlopeField}}
 
+\newcommand{\pplane}{{\sf PhasePlane}}
+
+\newcommand{\PPLANE}{{\sf PHASEPLANE}}
+
+% BADBAD: \newcommand{\Bbb}{\bf}. % Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead.
+
+\newcommand{\R}{\mbox{$\mathbb{R}$}}
+\let\C\relax
+\newcommand{\C}{\mbox{$\mathbb{C}$}}
+\newcommand{\Z}{\mbox{$\mathbb{Z}$}}
+\newcommand{\N}{\mbox{$\mathbb{N}$}}
 \newcommand{\D}{\mbox{{\bf D}}}
+
+\newcommand{\WW}{\mathcal{W}}
 
 \usepackage{amssymb}
 %\newcommand{\qed}{\hfill\mbox{\raggedright$\square$} \vspace{1ex}}
@@ -79,6 +82,7 @@
 \newcommand{\Matlab}{{M\small{AT\-LAB}} }
 \newcommand{\Matlabp}{{M\small{AT\-LAB}}}
 \newcommand{\computer}{\Matlab Instructions}
+\renewcommand{\computer}{M\small{ATLAB} Instructions}
 \newcommand{\half}{\mbox{$\frac{1}{2}$}}
 \newcommand{\compose}{\raisebox{.15ex}{\mbox{{\scriptsize$\circ$}}}}
 \newcommand{\AND}{\quad\mbox{and}\quad}
@@ -134,11 +138,25 @@
  \renewcommand{\theenumi}{\alph{enumi}}
  \renewcommand{\labelenumi}{(\theenumi)}
  \begin{enumerate}}
- {\end{enumerate}\endgroup}
+ {\end{enumerate}
+ \endgroup}
 
 \newcounter{help}
 \renewcommand{\thehelp}{\thesection.\arabic{equation}}
 
+%\newenvironment{equation*}%
+%{\renewcommand\endequation{\eqno (\theequation)* $$}%
+%   \begin{equation}}%
+%   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
+%$$\global\@ignoretrue}}
+
+\author{Martin Golubitsky and Michael Dellnitz}
+
+%\newenvironment{matlabEquation}%
+%{\renewcommand\endequation{\eqno (\theequation*) $$}%
+%   \begin{equation}}%
+%   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
+% $$\global\@ignoretrue}}
 
 \newcommand{\soln}{\textbf{Solution:} }
 \newcommand{\exercap}[1]{\centerline{Figure~\ref{#1}}}
@@ -158,6 +176,10 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \renewenvironment{solution}{}{}
 \fi
 
+\ifcsname answer\endcsname
+\renewcommand{\answer}{}
+\fi
+
 %\ifxake
 %\newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
 %\else
@@ -165,6 +187,11 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 {\let\oldtheequation\theequation\renewcommand{\theequation}{\oldtheequation*}\begin{equation}}%
   {\end{equation}\let\theequation\oldtheequation}
 %\fi
+
+\makeatother
+
+\newcommand{\RED}[1]{{\color{red}{#1}}} 
+
 
 %%
 %%
@@ -175,8 +202,6 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \usepackage{xcolor}
 \renewenvironment{solution}{\color{blue}}{\color{black}}
 \renewenvironment{computerExercise}{\begin{exercise}\textsc{(matlab)} }{\end{exercise}}
-
-\usepackage{amsmath}
 
 %\usepackage{environ}
 %\RenewEnviron{prompt}{}
