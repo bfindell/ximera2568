@@ -1,4 +1,4 @@
-\documentclass[nooutcomes]{ximera}
+\documentclass{ximera}
 %\documentclass[space,handout,nooutcomes]{ximera}
 
 \input{../preamble.tex}
@@ -17,6 +17,59 @@
 Key vocabulary for Exam 1.
 \end{abstract}
 \maketitle
+
+
+% From Section 1.3
+\begin{question}
+Special kinds of matrices:  
+\begin{enumerate}
+
+\item A $\answer[format=string]{square}$ matrix is a matrix
+with the same number of rows and columns.  
+
+\item A $\answer[format=string]{diagonal}$ matrix is a
+square matrix whose only nonzero entries are along the main diagonal. 
+
+\item The $\answer[format=string]{identity}$ matrix is the 
+diagonal matrix all of whose diagonal entries equal $1$.  The
+$n\times n$ identity matrix is denoted by $I_n$.  
+
+\item A $\answer[format=string]{zero}$ matrix \index{matrix!zero} is a matrix all
+of whose entries are $0$. A zero matrix is denoted by $0$.  
+
+\item The $\answer[format=string]{transpose}$ of an $m\times n$
+matrix $A$ is the $n\times m$ matrix obtained from $A$ by
+interchanging rows and columns.  The transpose of a matrix $A$ is denoted by $A^t$.  
+
+\item A $\answer[format=string]{symmetric}$ matrix is a square matrix whose entries are symmetric about the main
+diagonal; that is $a_{ij}=a_{ji}$.  Note that a symmetric matrix
+is a square matrix $A$ for which $A^t=\answer{A}$.
+
+\item An $\answer[format=string]{upper triangular}$ (two words) matrix is a square matrix all of whose entries below the
+main diagonal are $0$; that is, $a_{ij}=0$ if $i>j$.  
+A {\em strictly upper triangular} matrix is an upper triangular
+matrix whose diagonal entries are also equal to $\answer{0}$.  Similar
+definitions hold for $\answer[format=string]{lower triangular}$ (two words)
+and $\answer[format=string]{strictly lower triangular}$ (three words) matrices.  
+
+\end{enumerate}
+\end{question}
+
+
+\begin{question}
+For each of the following matrices, choose the {\em best} descriptor.  
+\begin{enumerate}
+\item $\left(\begin{array}{rrr} 1 & 2 & 3\\ 0 & 2 & 4\\ 0 & 0 & 6\end{array}\right)$ is a(n) 
+\wordChoice{\choice{identity}\choice{diagonal}\choice{symmetric}\choice[correct]{upper triangular}\choice{strictly upper triangular}} matrix.  
+\item $\left(\begin{array}{rrr} 0 & 2 & 3\\ 0 & 0 & 4\\ 0 & 0 & 0\end{array}\right)$ is a(n)
+\wordChoice{\choice{identity}\choice{diagonal}\choice{symmetric}\choice{upper triangular}\choice[correct]{strictly upper triangular}} matrix.  
+\item $\left(\begin{array}{rrr} 7 & 0 & 0\\ 0 & 2 & 0\\ 0 & 0 & -3\end{array}\right)$ is a(n) 
+\wordChoice{\choice{identity}\choice[correct]{diagonal}\choice{symmetric}\choice{upper triangular}\choice{strictly upper triangular}} matrix.  
+\item $\left(\begin{array}{rrr} 0 & 5 & 10\\ 5 & 3 & 1\\ 10 & 1 & 2\end{array}\right)$ is a(n) 
+\wordChoice{\choice{identity}\choice{diagonal}\choice[correct]{symmetric}\choice{upper triangular}\choice{strictly upper triangular}} matrix.  
+\end{enumerate}
+\end{question}
+
 
 
 % Based on definition 2.3.1. 
