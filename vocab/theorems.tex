@@ -1,0 +1,164 @@
+\documentclass{ximera}
+%\documentclass[space,handout,nooutcomes]{ximera}
+
+%\input{../preamble.tex}
+
+%\newcommand{\N}{\mathbb N}
+%\newcommand{\W}{\mathbb W}
+%\newcommand{\C}{\mathbb C}
+%\newcommand{\Z}{\mathbb Z}
+%\newcommand{\Q}{\mathbb Q}
+%\renewcommand{\R}{\mathbb R}
+
+\title{Theorem Review}
+\author{Brad Findell}
+\begin{document}
+\begin{abstract}
+Key theorems for Exam 1.
+\end{abstract}
+\maketitle
+
+
+\begin{problem}
+  Below are some \textbf{augmented matrices} for \textbf{linear
+    systems} $Ax = b$ after some row operations have been performed.
+  Fill in the blanks.  (Enter NMI for ``need more info.'')
+\begin{enumerate}
+\item 
+  \[
+  \left(\begin{array}{ccc|c} 1 & 0 & 0 & 2 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0
+  \end{array}\right)
+  \]
+  Here ${\rm rank}(A) = \answer{2}$, and  ${\rm rank}(A|b) = \answer{2}$.  
+  \begin{multipleChoice}
+  \choice{There are no solutions.}
+  \choice{There is exactly one solution.}
+  \choice{There are infinitely many solutions.}
+  \choice{Need more information.}
+  \end{multipleChoice}
+\item 
+  \[
+  \left(\begin{array}{ccc|c} 1 & 0 & 0 & 2 \\ 0 & 1 & 0 & 3 \\ 0 & 0 & 0 & 1
+  \end{array}\right)
+  \]
+  Here ${\rm rank}(A) = \answer{2}$, and   ${\rm rank}(A|b) = \answer{3}$.
+  \begin{multipleChoice}
+  \choice{There are no solutions.}
+  \choice{There is exactly one solution.}
+  \choice{There are infinitely many solutions.}
+  \choice{Need more information.}
+  \end{multipleChoice}
+\item 
+    \[
+  \left(\begin{array}{ccc|c}  1 &  0 &  0 &  6  \\  0 &  1 &  0 &  3  \\  0 &  0 &  1 &  -2  
+  \end{array}\right)
+  \]
+  Here ${\rm rank}(A) = \answer{3}$, and  ${\rm rank}(A|b) = \answer{3}$.
+    \begin{multipleChoice}
+  \choice{There are no solutions.}
+  \choice{There is exactly one solution.}
+  \choice{There are infinitely many solutions.}
+  \choice{Need more information.}
+  \end{multipleChoice}
+\end{enumerate}
+ 
+\end{problem}
+
+\begin{question}
+Suppose a linear system of $m$ equations in $n$ unknowns is represented by the matrix equation $Ax=b$ representing $m$ equations in $n$ unknowns, 
+and suppose you compute ${\rm rank}(A)$ and ${\rm rank}(A|b)$.  Which of the following situations are possible? 
+\begin{selectAll}
+  \choice[correct]{${\rm rank}(A) < {\rm rank}(A|b)$.}
+  \choice[correct]{${\rm rank}(A) = {\rm rank}(A|b)$.}
+  \choice{${\rm rank}(A) > {\rm rank}(A|b)$.}
+\end{selectAll}
+
+\begin{question}
+Correct!  
+
+When ${\rm rank}(A) < {\rm rank}(A|b)$ what can we conclude? 
+\begin{multipleChoice}
+  \choice{Not much.  It depends on the circumstances.}
+  \choice{The system has a unique solution.}
+  \choice{The system has an infinite number of solutions.}
+  \choice{The system has at least one solution.}
+  \choice[correct]{The system has no solutions.}
+\end{multipleChoice}
+
+When ${\rm rank}(A) = {\rm rank}(A|b)$ what can we conclude? 
+\begin{multipleChoice}
+  \choice{Not much.  It depends on the circumstances.}
+  \choice{The system has a unique solution.}
+  \choice{The system has an infinite number of solutions.}
+  \choice[correct]{The system has at least one solution.}
+  \choice{The system has no solutions.}
+
+\begin{question}
+Correct!  In fact, $Ax=b$ will have the same number of solutions as the homogeneous equation $Ax=0$.  
+Furthermore, 
+\[
+{\rm Number of parameters }= \answer{n} - {\rm rank}(A). 
+\]
+\end{question}
+\end{multipleChoice}
+\end{question}
+\end{question}
+
+
+\begin{problem}
+  Let $L_A:{\mathbb R}^3\to {\mathbb R}^2$ be a linear transformation that maps:
+  \[
+  e_1\mapsto \begin{pmatrix} 1\\ 2 \end{pmatrix},\hspace{1in} 
+  e_2\mapsto \begin{pmatrix} -3\\ 1 \end{pmatrix},\hspace{1in} 
+  e_3\mapsto \begin{pmatrix} 4\\ 0 \end{pmatrix}.
+        \]
+        Write the \textbf{matrix} $A$ corresponding to this linear
+        transformation.
+  \[
+  A=\begin{bmatrix} \answer{1} &  \answer{-3} &  \answer{4} \\ 
+       \answer{2} &  \answer{1} &  \answer{0}\end{bmatrix}
+  \]
+        
+\end{problem}
+
+
+\begin{question}
+Suppose $A$ is an $m\times n$ matrix.  When thinking of $A$ as a transformation from
+\wordChoice{\choice{${\mathbb R}^2$}\choice{${\mathbb R}^3$}\choice{${\mathbb R}^m$}\choice[correct]{${\mathbb R}^n$}} to 
+\wordChoice{\choice{${\mathbb R}^2$}\choice{${\mathbb R}^3$}\choice[correct]{${\mathbb R}^m$}\choice{${\mathbb R}^n$}}, the 
+$\answer[format=string]{columns}$ of $A$ are the $\answer[format=string]{images}$ of the 
+standard basis vectors in ${\mathbb R}^n$. 
+\end{question}
+
+\begin{question}
+The rank of a matrix is the number of non-zero rows. True or false?  
+\begin{multipleChoice}
+\choice{True.}
+\choice{False.}
+\end{multipleChoice}
+\begin{question}
+Before counting non-zero rows, the matrix must be in $\answer[format=string]{reduced echelon form}$. (Hint: three words without "row.")
+\end{question}
+\end{question}
+
+
+
+%For an 𝑛 × 𝑛 matrix 𝐴, the following are equivalent: 
+%1. 𝐴 is invertible. 
+%2. The equation 𝐴𝑥 = 𝑏 has a unique solution for each 𝑏 ∈ R𝑛. 
+%3. The only solution to 𝐴𝑥=0 is 𝑥=0. 
+%4. 𝐴 is row equivalent to 𝐼𝑛. 
+%
+%Use row operations on (A|I) to find A^{-1}
+%
+%2 by 2 determinant is area of parallelogram formed by columns
+%
+%Is a mapping linear? 
+%Write matrix for a transformation given images of basis vectors. 
+%Is matrix product defined?  Compute when possible. 
+%Write inverse using row reduction or formula. 
+
+
+
+\end{document}
+

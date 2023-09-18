@@ -1,14 +1,14 @@
 \documentclass{ximera}
 %\documentclass[space,handout,nooutcomes]{ximera}
 
-\input{../preamble.tex}
+%\input{../preamble.tex}
 
 %\newcommand{\N}{\mathbb N}
 %\newcommand{\W}{\mathbb W}
 %\newcommand{\C}{\mathbb C}
 %\newcommand{\Z}{\mathbb Z}
 %\newcommand{\Q}{\mathbb Q}
-\renewcommand{\R}{\mathbb R}
+%\renewcommand{\R}{\mathbb R}
 
 \title{Vocabulary Review}
 \author{Martin Golubitsky and Brad Findell}
@@ -24,28 +24,22 @@ Key vocabulary for Exam 1.
 Special kinds of matrices:  
 \begin{enumerate}
 
-\item A $\answer[format=string]{square}$ matrix is a matrix
-with the same number of rows and columns.  
+\item A matrix with the same number of rows and columns is called a(n) $\answer[format=string]{square}$ matrix. 
 
-\item A $\answer[format=string]{diagonal}$ matrix is a
-square matrix whose only nonzero entries are along the main diagonal. 
+\item A square matrix whose only nonzero entries are along the main diagonal is called a(n) $\answer[format=string]{diagonal}$ matrix. 
 
-\item An $n\times n$ $\answer[format=string]{identity}$ matrix, denoted $I_n$, is the 
-diagonal matrix all of whose diagonal entries equal $1$.  
+\item A diagonal matrix all of whose diagonal entries equal $1$ is called an $n\times n$ $\answer[format=string]{identity}$ matrix and is denoted $I_n$.  
 
-\item A $\answer[format=string]{zero}$ matrix, denoted $0$, is a matrix all
-of whose entries are $0$.   
+\item A matrix all of whose entries are $0$ is called a(n) $\answer[format=string]{zero}$ matrix, denoted $0$.  
 
-\item The $\answer[format=string]{transpose}$ of an $m\times n$
-matrix $A$, denoted $A^t$, is the $n\times m$ matrix obtained from $A$ by
-interchanging rows and columns.
+\item Given an $m\times n$ matrix $A$, the $n\times m$ matrix obtained from $A$ by interchanging rows and columns is called 
+the $\answer[format=string]{transpose}$ of A and is denoted $A^t$.  
 
-\item A $\answer[format=string]{symmetric}$ matrix is a square matrix whose entries are symmetric about the main
-diagonal; that is $a_{ij}=a_{ji}$.  Note that a symmetric matrix
-is a square matrix $A$ for which $A^t=\answer{A}$.
+\item A square matrix whose entries are symmetric about the main diagonal (that is $a_{ij}=a_{ji}$) is called a $\answer[format=string]{symmetric}$ matrix.  
+Note that such a matrix satisfies the equation $A^t=\answer{A}$.
 
-\item An $\answer[format=string]{upper triangular}$ (two words) matrix is a square matrix all of whose entries below the
-main diagonal are $0$; that is, $a_{ij}=0$ if $i>j$.  
+\item A square matrix all of whose entries below the main diagonal are $0$ (that is, $a_{ij}=0$ if $i>j$) 
+is called a(n) $\answer[format=string]{upper triangular}$ (two words) matrix.  
 Such a matrix is said to be \wordChoice{\choice{mostly}\choice[correct]{strictly}\choice{evenly}}
 $\answer[format=string]{upper triangular}$ when its diagonal entries are also equal to $\answer{0}$.  Similar
 definitions hold for $\answer[format=string]{lower triangular}$ (two words)
@@ -69,12 +63,23 @@ For each of the following matrices, choose the {\em best} descriptor.
 \end{enumerate}
 \end{question}
 
-
+\begin{question}
+Given vectors $u, v\in {\mathbb R^n}$ and scalars $a, vbin {\mathbb R}$, the expression $au+bv$ is called a $\answer[format=string]{linear combination}$ of $u$ and $v$. 
+\end{question}
 
 % Based on definition 2.3.1. 
 \begin{question}
 A linear system of equations that has no solutions is said to be $\answer[format=string]{inconsistent}$.  With one or more solutions, the system is $\answer[format=string]{consistent}$. 
 \end{question} 
+
+\begin{question}
+Given a system of $m$ equations in $n$ unknowns, we often write the system in the form $Ax=b$, where $A$ is the $\answer{m}$ by $\answer{n}$ coefficient matrix, 
+$b$ is an $\answer{m}$ by $\answer{1}$ vector of constants, and $x$ is an $\answer{n}$ by $\answer{1}$ vector of unknowns. 
+
+Next, we write the $\answer[format=string]{augmented}$ matrix $(A|b)$, and perform $\answer[format=string]{row operations}$.  At each step in the process, 
+each row of this matrix represents a(n) $\answer[format=string]{equation}$ in the unknowns.  
+\end{question}
+
 
 % Based on definition 2.4.1. 
 \begin{question}
@@ -86,7 +91,7 @@ $\answer[format=string]{pivot}$.
 \end{enumerate}
 Then the matrix $E$ is in (row) $\answer[format=string]{echelon form}$.  (Hint: two words.)
 
-Note: A consequence of this definition is that all rows that are identically zero occur at the \wordChoice{\choice{top}\choice[correct]{bottom}} of the matrix.
+Note: A consequence of this definition is that all rows that are identically zero occur at the \wordChoice{\choice{top}\choice[correct]{bottom}\choice{right}} of the matrix.
 \end{question} 
 
 % Based on definition 2.4.2. 
@@ -122,8 +127,14 @@ A mapping $L: \mathbb{R}^n \to \mathbb{R}^m$ is $\answer[format=string]{linear}$
 
 % Based on definition 3.3.2. 
 \begin{question}
-Let $j$ be an integer between $1$ and $n$. The $n$-vector $e_j$ is the vector that has a $\answer{1}$ in the $j^{th}$ entry and a $\answer{0}$ in every other entry. 
+Consider the vectors in $\mathbb{R}^n$.  Let $j$ be an integer between $1$ and $n$. The $n$-vector $e_j$ is the vector that has a $\answer{1}$ in the $j^{th}$ entry and a $\answer{0}$ in every other entry. Each $e_j$ is called a(n) $\answer[format=string]{standard basis}$ vector.  (Hint: two words.)  
 \end{question} 
+
+\begin{question}
+A matrix equation of the form $Ax=0$ is said to be $\answer[format=string]{homogeneous}$.  Such a system is $\answer[format=string]{consistent}$ because $0$ must be a solution.  
+
+In contrast, a matrix equation of the form $Ax=b$, with $b\ne 0$ is said to be $\answer[format=string]{inhomogeneous}$ or $\answer[format=string]{nonhomogeneous}$.  Such a system is said to be $\answer[format=string]{inconsistent}$ if there are no solutions.  
+\end{question}
 
 % Based on definition 3.7.1. 
 \begin{question}
