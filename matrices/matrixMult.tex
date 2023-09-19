@@ -25,12 +25,10 @@ B = \begin{bmatrix}   -2  &  3  &  1\\  0  &  2  &  3 \end{bmatrix}
 C = \begin{bmatrix}  1  &   2 &   -3\end{bmatrix} \qquad
 D = \begin{bmatrix} 3\\  -1\\ 2  \end{bmatrix}
 \]
-For each of the following expressions, if the product exists, indicate the size of the matrix product; if the product does not exist, enter "x" (without quotes) as each dimension. 
+For each of the following expressions, if the product exists, indicate the size of the matrix product; if the product does not exist, enter ``x'' (without quotes) as each dimension. 
 \begin{enumerate}
 \item $AB$: $\answer{3}$ by $\answer{3}$
 \item $BA$: $\answer{2}$ by $\answer{2}$
-\item $AA^t$: $\answer{3}$ by $\answer{3}$
-\item $A^tA$: $\answer{2}$ by $\answer{2}$
 \item $CD$: $\answer{1}$ by $\answer{1}$
 \item $DC$: $\answer{3}$ by $\answer{3}$
 %\item $CA^t$: $\answer{x}$ by $\answer{x}$  
@@ -52,10 +50,6 @@ AB &= \begin{bmatrix}  3   &  2\\   -1  &  4\\   0   &  5 \end{bmatrix}
 BA &= \begin{bmatrix}   -2  &  3  &  1\\  0  &  2  &  3 \end{bmatrix}
 	\begin{bmatrix}  3   &  2\\   -1  &  4\\   0   &  5 \end{bmatrix}
 	= \begin{bmatrix}   \answer{-9}  &  \answer{13}\\   \answer{-2}  &  \answer{23}  \end{bmatrix} \\
-AA^t &= \begin{bmatrix}  \answer{13}  &   \answer{5}  &  \answer{10}\\   
-	\answer{5}   & \answer{17}  &  \answer{20}\\  
-	\answer{10}  &  \answer{20}  &  \answer{25}  \end{bmatrix} \\
-A^tA &= \begin{bmatrix}    \answer{10}  &   \answer{2}\\   \answer{2}  &  \answer{45}  \end{bmatrix} \\
 CD &=  \begin{bmatrix}  1  &   2 &   -3\end{bmatrix}
 	\begin{bmatrix} 3\\  -1\\ 2  \end{bmatrix}
 	= \begin{bmatrix}  \answer{-5} \end{bmatrix} \\
@@ -71,9 +65,48 @@ BD &= \begin{bmatrix}   -2  &  3  &  1\\  0  &  2  &  3 \end{bmatrix}
 	= \begin{bmatrix}  \answer{-7} \\ \answer{4}  \end{bmatrix}
 \end{align*}
 
-
 \end{exercise}
 \end{exercise}
 
+\begin{exercise}
+Again suppose, 
+\[
+A = \begin{bmatrix}  3   &  2\\   -1  &  4\\   0   &  5 \end{bmatrix}.  
+\]
+What are the dimensions of $A^t$?  $\answer{2}$ by $\answer{3}$
+
+\begin{exercise}
+Write the matrix $A^t$:
+\[
+A^t = \begin{bmatrix} \answer{3} & \answer{-1} & \answer{0} \\ 
+	\answer{2} & \answer{4} & \answer{5} \end{bmatrix}
+\]
+\begin{exercise}
+For each of the following expressions, if the product exists, indicate the size of the matrix product; if the product does not exist, enter ``x'' (without quotes) as each dimension. 
+\begin{enumerate}
+\item $AA^t$: $\answer{3}$ by $\answer{3}$
+\item $A^tA$: $\answer{2}$ by $\answer{2}$
+\end{enumerate}
+\begin{exercise}
+\begin{align*}
+AA^t &= \begin{bmatrix}  3   &  2\\   -1  &  4\\   0   &  5 \end{bmatrix}
+	 \begin{bmatrix} 3 & -1 & 0 \\ 2 & 4 & 5 \end{bmatrix}
+     = \begin{bmatrix}  \answer{13}  &   \answer{5}  &  \answer{10}\\   
+	\answer{5}   & \answer{17}  &  \answer{20}\\  
+	\answer{10}  &  \answer{20}  &  \answer{25}  \end{bmatrix} \\
+A^tA &= \begin{bmatrix} 3 & -1 & 0 \\ 2 & 4 & 5 \end{bmatrix}
+	\begin{bmatrix}  3   &  2\\   -1  &  4\\   0   &  5 \end{bmatrix}
+	= \begin{bmatrix}    \answer{10}  &   \answer{2}\\   \answer{2}  &  \answer{45}  \end{bmatrix}
+\end{align*}
+
+What kind of special matrices are these products?  $\answer[format=string]{symmetric}$
+
+Furthermore, the diagonal entries are all 
+\wordChoice{\choice{odd}\choice{prime}\choice{composite}\choice[correct]{sums of squares}}. 
+
+\end{exercise}
+\end{exercise}
+\end{exercise}
+\end{exercise}
 
 \end{document}
