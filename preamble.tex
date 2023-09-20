@@ -166,19 +166,19 @@ Figure~\ref{#1}b}}
 Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \newcommand{\para}{\hspace{0.4in}}
 
-\usepackage{ifluatex}
-\ifluatex
-\ifcsname displaysolutions\endcsname%
-\else
-\renewenvironment{solution}{\suppress}{\endsuppress}
-\fi
-\else
-\renewenvironment{solution}{}{}
-\fi
-
-\ifcsname answer\endcsname
-\renewcommand{\answer}{}
-\fi
+%\usepackage{ifluatex}
+%\ifluatex
+%\ifcsname displaysolutions\endcsname%
+%\else
+%\renewenvironment{solution}{\suppress}{\endsuppress}
+%\fi
+%\else
+%\renewenvironment{solution}{}{}
+%\fi
+%
+%\ifcsname answer\endcsname
+%\renewcommand{\answer}{}
+%\fi
 
 %\ifxake
 %\newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
@@ -188,7 +188,7 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
   {\end{equation}\let\theequation\oldtheequation}
 %\fi
 
-\makeatother
+%\makeatother
 
 \newcommand{\RED}[1]{{\color{red}{#1}}} 
 
@@ -224,9 +224,9 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \newcommand{\exerciselabel}[2]{\textbf{\textsection #2, Exercise #1\isitmatlab.}\def\@currentlabel{#1}\def\isitmatlab{}}
 \makeatother
 
-%\newcounter{problem}
-\newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem}}}
-\newcommand{\matlabproblemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem} (MATLAB)}}
+\newcounter{problemx}
+\newcommand{\problemlabel}{\refstepcounter{problemx}\section*{Problem \arabic{problemx}}}
+\newcommand{\matlabproblemlabel}{\refstepcounter{problemx}\section*{Problem \arabic{problemx} (MATLAB)}}
 %\newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem}}
 %\newcommand{\matlabproblemlabel}{\refstepcounter{problem}\section*{Problem (MATLAB)}}
 
